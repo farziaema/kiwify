@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useSendPasswordResetEmail } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
+import Loading from "../Loading/Loading";
 
 // CSS
 import "./ResetPassword";
 
 // Images
 import kiwifyLogo from "../../Images/kiwify-green-logo.png";
-import auth from "../../firebase.init";
 
 const ResetPassword = () => {
   const [status, setStatus] = useState(false);
@@ -21,6 +22,10 @@ const ResetPassword = () => {
   // Firebase
   const [sendPasswordResetEmail, sending, error] =
     useSendPasswordResetEmail(auth);
+
+  if (sending) {
+    return <Loading />;
+  }
 
   // Reset Password
   const onSubmit = (data) => {

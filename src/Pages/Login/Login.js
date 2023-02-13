@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
+import Loading from "../Loading/Loading";
 
 // CSS
 import "./Login.css";
@@ -24,15 +25,15 @@ const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
 
-  if (loading) {
-    // return <Loading></Loading>;
-  }
-
   useEffect(() => {
     if (user) {
       navigate("/dashboard");
     }
   }, [navigate, user]);
+
+  if (loading) {
+    return <Loading></Loading>;
+  }
 
   // Login
   const onSubmit = (data) => {

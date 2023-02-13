@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
+import Loading from "../Loading/Loading";
 
 // CSS
 import "./Register.css";
@@ -25,15 +26,15 @@ const Register = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
 
-  if (loading) {
-    // return <Loading></Loading>;
-  }
-
   useEffect(() => {
     if (user) {
       navigate("/dashboard");
     }
   }, [navigate, user]);
+
+  if (loading) {
+    return <Loading></Loading>;
+  }
 
   // Register
   const onSubmit = (data) => {
