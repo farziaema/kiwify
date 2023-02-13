@@ -35,30 +35,28 @@ const Register = () => {
     }
   }, [navigate, user]);
 
-  //   Register
-  function onSubmit(data) {
+  // Register
+  const onSubmit = (data) => {
     const { email, password } = data;
     createUserWithEmailAndPassword(email, password);
-    console.log(user);
-    console.log(error.message);
-  }
+  };
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div>
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
-          <img src={kiwifyLogo} alt="Kiwify" className="mx-auto h-12 w-auto" />
+          <img src={kiwifyLogo} alt="Logo" className="mx-auto h-12 w-auto" />
           <h2 className="mt-6 text-center text-3xl leading-9 font-extrabold text-gray-900">
             Criar nova conta
           </h2>
           <p className="mt-2 text-center text-base leading-5 text-gray-600">
             Ou{" "}
-            <a
-              href="/login"
-              className="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150"
+            <Link
+              to="/login"
+              className="font-medium text-indigo-600 hover:text-indigo-500 focus:underline transition ease-in-out duration-150"
             >
               entrar na sua conta existente
-            </a>
+            </Link>
           </p>
         </div>
         <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
