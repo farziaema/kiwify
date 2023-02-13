@@ -43,11 +43,14 @@ const Register = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div className="px-7 sm:px-0 min-h-screen bg-gray-50 flex flex-col justify-center py-12">
       <div>
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
           <img src={kiwifyLogo} alt="Logo" className="mx-auto h-12 w-auto" />
-          <h2 className="mt-6 text-center text-3xl leading-9 font-extrabold text-gray-900">
+          <h2 className="mt-6 text-center text-3xl leading-9 font-extrabold text-gray-900
+          
+          sm:text-pink-600 md:text-orange-500 lg:text-blue-500 xl:text-lime-500 2xl:text-red-900
+          ">
             Criar nova conta
           </h2>
           <p className="mt-2 text-center text-base leading-5 text-gray-600">

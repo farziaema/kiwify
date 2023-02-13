@@ -18,7 +18,7 @@ const Dashboard = () => {
     navigate("/login");
   };
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div className="px-7 sm:px-0 min-h-screen bg-gray-50 flex flex-col justify-center py-12">
       <div>
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
           <img src={kiwifyLogo} alt="Logo" className="mx-auto h-12 w-auto" />
